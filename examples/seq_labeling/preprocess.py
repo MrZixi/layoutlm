@@ -52,36 +52,18 @@ def convert(args):
             file_path = os.path.join(args.data_dir, file)
             with open(file_path, "r", encoding="utf8") as f:
                 data = json.load(f)
-            image_path = file_path.replace("ocr_results", "documents")
+            image_path = file_path.replace("annotations", "images")
             image_path = image_path.replace("json", "png")
             file_name = os.path.basename(image_path)
             image = Image.open(image_path)
-            
-            #width, length = image.size
-
-            #for item in data["form"]:
-            ###update for docVQA
-            
-            data = data['recognitionResults'][0]
-            width, length =data['width'],data['height']
-            for item in data['lines']:
-                
-                item['box']=item['boundingBox']
-                del item['boundingBox']
-                item['label']='other'
-                ####
-
+            width, length = image.size
+            for item in data["form"]:
                 words, label = item["words"], item["label"]
                 words = [w for w in words if w["text"].strip() != ""]
                 if len(words) == 0:
                     continue
                 if label == "other":
                     for w in words:
-                        ##update for DocVQA
-                        w['box']=w['boundingBox']
-                        del w['boundingBox']
-                        w['label']='other'
-                        ###
                         fw.write(w["text"] + "\tO\n")
                         fbw.write(
                             w["text"]

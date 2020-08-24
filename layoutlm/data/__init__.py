@@ -1,2 +1,2 @@
 # flake8: noqa
-from .DocVQA import DocVQADataset
+from .funsd import FunsdDataset

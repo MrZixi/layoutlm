@@ -1,5 +1,5 @@
 # flake8: noqa
-from .data.DocVQA import DocVQADataset
+from .data.funsd import FunsdDataset
 from .modeling.layoutlm import (
     LayoutlmConfig,
     LayoutlmForSequenceClassification,

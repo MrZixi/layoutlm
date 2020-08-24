@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="7fd48efc-eb7e-4420-9ea7-ee7023908b43" name="alibaba-intern">
+        <fileTransfer accessType="SFTP" host="11.162.3.95" port="12345" sshConfigId="1246fa3f-431b-48c8-af5a-4a2cbc45d380" sshConfig="root@11.162.3.95:12345 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
